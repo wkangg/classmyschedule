@@ -46,7 +46,7 @@ function parseTable(table, sessionName, rangeStart, rangeEnd) {
     // FIX: add '\s' to avoid picking up spaces after <\b> before </span>
     const location = (html.match(/Location:.*?>([^<\s]*)</) || [])[1]?.trim() || "TBD";
     const prof = (html.match(/Instructor:.*?>([^<\s]*)</) || [])[1]?.trim() || "Unknown";
-    const type = (html.match(/Type:.*?>([^<\s]*)</) || [])[1]?.trim() || "Session";
+    const type = (html.match(/Component:.*?>([^<\s]*)</) || [])[1]?.trim() || "Session";
 
     if (!title || !startTimeStr || !endTimeStr || !dayStr) return;
 
